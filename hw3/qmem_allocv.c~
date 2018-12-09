@@ -1,0 +1,5 @@
+#include "qmem.h"
+
+int qmem_allocv(unsigned num_bytes, int mark, void ** rslt){
+
+}

@@ -1,0 +1,20 @@
+#include "qmem.h"
+#include <stdlib.h>
+#include <errno.h>
+
+int qmem_allocz(unsigned num_bytes, void ** rslt){
+  *rslt = malloc(num_bytes);
+  if(*rslt == NULL)
+    return -1;
+  else{
+    int x;
+    for(x = 0; x < num_bytes; x++){
+      (int)((*rslt)[x]) = 0;
+    }
+  }
+  if(errno != 0)
+    return -2;
+  else
+    return 0;
+}
+

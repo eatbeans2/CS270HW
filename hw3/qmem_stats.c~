@@ -1,0 +1,2 @@
+
+int qmem_stats(unsigned long * num_allocs, unsigned long * num_bytes_alloced);

@@ -1,0 +1,20 @@
+#include <stdlib.h>
+#include "qmem.h"
+
+int main(){
+  int errc;
+  struct qbuf {int indx; char data[256]};
+  struct qbuf * p = NULL;
+  errc = qmem_allocz(sizeof(struct qbuf), (void **)&p);
+  if(errc != 0){
+    printf("Something went wrong: %d\n", errc);
+    printf("Contents of pointer: ");
+    int x;
+    for(x = 0; x < sizeof(struct qbuf); x++){
+      printf("%d", ((int*)p)[x]);
+    }
+    printf("\n");
+  }
+  else
+    printf("Nothing went wrong\n");
+}

@@ -1,0 +1,45 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "quickSort.h"
+
+int quickSort(char** arrays, int stringCount, int stringLength, int low, int high){
+  if(low < high){
+    int p = partition(arrays, stringLength, low, high);
+    quickSort(arrays, stringCount, stringLength, low, p-1);
+    quickSort(arrays, stringCount, stringLength, p+1, high);
+  }
+  return 0;
+}
+
+int partition(char** arrays, int stringLength, int low, int high){
+  char* pivot = malloc(sizeof(char[stringLength]));
+  strcpy(pivot, arrays[high]);
+  int i = low;
+  int j;
+  for(j = low; j <= high-1; j++){
+    int curChar;
+    for(curChar = 0; curChar < stringLength; curChar++){
+      if(arrays[j][curChar] < pivot[curChar])
+	break;
+      if(arrays[j][curChar] > pivot[curChar]){
+	//printf("swapping characters %d, %d \n", j, i);
+	char* buffer = malloc(sizeof(char[stringLength]));
+	strcpy(buffer, arrays[i]);
+	strcpy(arrays[i], arrays[j]);
+	strcpy(arrays[j], buffer);
+	free(buffer);
+	i++;
+	break;
+      }
+    } 
+  }
+	char* buffer = malloc(sizeof(char[stringLength]));
+	strcpy(buffer, arrays[i]);
+	strcpy(arrays[i], arrays[high]);
+	strcpy(arrays[high], buffer);
+	free(buffer);
+	free(pivot);
+	return i;
+}

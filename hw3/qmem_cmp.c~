@@ -1,0 +1,4 @@
+
+int qmem_cmp(void * p1, void * p2, int * diff){
+
+}

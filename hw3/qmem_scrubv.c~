@@ -1,0 +1,4 @@
+
+int qmem_scrubv(void * data, int mark){
+
+}

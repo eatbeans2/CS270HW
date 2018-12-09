@@ -1,0 +1,70 @@
+Without -O
+
+1) The size of each function in decimal
+main: 489 bits
+      	   initialize array: 259 bits
+bubbleSort: 407 bits
+	   checkValues: 132 bits
+quickSort: 124 bits
+	   partition: 624 bits
+insertionSort: 67 bits
+	   insert: 567 bits	
+
+2) The address of each function in memory in hexidecimal
+main: 0x00000000000008fa
+initializeArray: 0x0000000000000ae3
+bubbleSort: 0x0000000000000be6
+checkValues: 0x0000000000000d7d
+quickSort: 0x0000000000000e01
+partition: 0x0000000000000e7d
+insertionSort: 0x00000000000010ed
+insert: 0x0000000000001130
+
+3) The name and address of the entry point for the entire program
+_start: 0x00000000000007f0
+
+4) The locations and names of any functions from "standard" C libraries linked with your file
+I could not find these in my linker map... I have included the map files.
+
+5) The locations and sizes in decimal of the data sections used by your program
+*default*        0x0000000000000000 0xffffffffffffffff
+Or 0 to 19446744073709551615
+
+6) The time (in seconds) each of your sort functions takes to sort the data.
+Insertion sort: 947.72 seconds
+Bubble sort: 3307.48
+Quick sort: N/A (Segmentation fault... Still working on it...)
+
+WITH -O
+
+1) The size of each function in decimal
+main: 489 bits
+      	   initialize array: 259 bits
+bubbleSort: 407 bits
+	   checkValues: 132 bits
+quickSort: 124 bits
+	   partition: 624 bits
+insertionSort: 67 bits
+	   insert: 567 bits	
+
+2) The address of each function in memory in hexidecimal
+main: 0x00000000000008aa
+initializeArray: 0x0000000000000a93
+bubbleSort: 0x0000000000000b96
+checkValues: 0x0000000000000d2d
+quickSort: 0x0000000000000db1
+partition: 0x0000000000000e2d
+insertionSort: 0x000000000000108b
+insert: 0x00000000000010ce
+
+3) The name and address of the entry point for the entire program
+_start: 0x00000000000007a0
+
+4) The locations and names of any functions from "standard" C libraries linked with your file
+I could not find these in my linker map... I have included the map files.
+
+5) The locations and sizes in decimal of the data sections used by your program
+*default*        0x0000000000000000 0xffffffffffffffff
+Or 0 to 19446744073709551615
+
+6) The time (in seconds) each of your sort functions takes to sort the data.
